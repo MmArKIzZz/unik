@@ -1,0 +1,16 @@
+import random
+def F(p,n=100):
+    for l in range (2, p+1):
+        c=0
+        for r in range (n):
+            bd=[]
+            for i in range (0,l):
+                d=random.randrange(0,365)
+                bd.append(d)
+            sbd=set(bd)
+            if len(sbd)<len(bd):
+                c+=1
+    proc=c/n
+    return proc
+print(F(23))
+print(F(60))
