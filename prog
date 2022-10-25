@@ -1,0 +1,23 @@
+import dcalc
+f=''
+j=0
+def zad(*args,**kwargs):
+    while True:
+        a=input("Введите название(Если нажать Enter название-Point).Для завершения работы ввидите -999 " )
+        global j
+
+        f=''
+        if a!="-1":
+            z = int(input("Введите градусы "))
+            z = dcalc.degtomin(z)
+            f+=a
+            if f=='':
+                f+=f"Point_{j}"
+                j+=1
+                kwargs[f]=z
+            else:
+                kwargs[f] = z
+            return kwargs,zad()
+        else:
+            break
+print(zad())
