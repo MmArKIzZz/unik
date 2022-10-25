@@ -1,0 +1,53 @@
+import math
+
+
+def degtomin(deg):
+    '''
+    deg=десятичные градусы
+    Выводит градусы, минуты, секунды
+    '''
+    degrees = int(deg)
+    minu = int((deg - degrees) * 60)
+    sec = ((((deg - degrees) * 60) - minu) * 60)
+    sec = round(sec, 5)
+    return (f"{degrees}°{minu}'"f'{sec}"')
+
+
+def mintodeg(deg, minu, sec):
+    '''
+    deg=часы
+    minu=минуты
+    sec=секунды
+    Выводит градусы
+    '''
+    minu /= 60
+    sec /= 3600
+    deg=deg + minu + sec
+    return f"{round(deg,3)}°"
+
+
+def radindeg(rad):
+    '''
+    rad=радианы
+    Выводит градусы
+    '''
+    deg = math.degrees(rad)
+    return str(round(deg,3))+"°"
+
+
+def deginrad(deg):
+    '''
+    deg=градусы
+    Выводит радианы
+    '''
+    rad = math.radians(deg)
+    return round(rad,3)
+
+
+if __name__ == "__main__":
+    print(degtomin(2))
+    print(mintodeg(36, 1, 23))
+    print(radindeg(15))
+    print(deginrad(180))
+    print(__name__)
+
