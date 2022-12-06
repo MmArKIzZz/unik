@@ -12,8 +12,8 @@ while page_number<=5:
         body.append(widget)
     for i in range(0,len(body)):
         d=[]
-        f=[]
         name= body[i].find('h3')
+        com=body[i].find('p')
         adress = body[i].find('span', class_="org-widget-header__meta org-widget-header__meta--location")
         d.append(name.text.strip())
         d.append(adress.text.strip())
@@ -21,5 +21,6 @@ while page_number<=5:
         for phones in phone:
             d.append(phones.text.strip())
         final.append(d)
-    print(final)
     page_number+=1
+print(final)
+
